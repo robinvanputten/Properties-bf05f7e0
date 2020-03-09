@@ -1,5 +1,6 @@
 <?php
-class MyLogger{
+class MyLogger
+{
     public string $origin;
 
     public function __construct() {
