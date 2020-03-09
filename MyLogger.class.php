@@ -1,6 +1,5 @@
 <?php
-class MyLogger 
-{
+class MyLogger{
     public string $origin;
 
     public function __construct() {
@@ -13,7 +12,7 @@ class MyLogger
 
     public function warning($message) {
         echo $this->logWithTime($this->origin . 'WARNING: ' . $message . PHP_EOL);
-    }	
+    }
 
     public function error($message) {
         echo $this->logWithTime($this->origin . 'ERROR: ' . $message . PHP_EOL);
@@ -29,24 +28,24 @@ class MyLogger
 
     public function log($message, $loglevel = "") {
         switch ($loglevel) {
-            case 'WARNING':
-                $this->warning($message);
-                break;
-            case 'ERROR':
-                $this->error($message);
-                break;
-            case 'DEBUG':
-                $this->debug($message);
-                break;
-            case 'INFO':
-                $this->info($message);
-                break;
-            default:
-                echo $message;
-                break;
+        case 'WARNING':
+            $this->warning($message);
+            break;
+        case 'ERROR':
+            $this->error($message);
+            break;
+        case 'DEBUG':
+            $this->debug($message);
+            break;
+        case 'INFO':
+            $this->info($message);
+            break;
+        default:
+            echo $message;
+            break;
         }
     }
-    
+
     public function setOrigin($orig) {
         $this->origin = $orig . ' - ';
     }
